@@ -1,0 +1,7 @@
+---
+- hosts: all  
+  tasks:
+   - name: Install docker
+     shell: wget -qO- https://get.docker.com/ | sh
+   - name: Add user to docker group
+     shell: usermod -aG docker $(whoami)
